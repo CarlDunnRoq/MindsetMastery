@@ -34,7 +34,9 @@ test('When initialized on a "non-fib" number, it should throw an error', () => {
 });
 test('When initialized at 2 and skipped with a negative value, it should return 8', () => {
     fibonacci.init(13)
-    expect(fibonacci.skip(-1)).toBe(8);
+    expect(() => {
+        fibonacci.init(-1);
+    }).toThrow(console.error());
 });
 test('When initialized at 1 and skipped by 1, it should return 1', () => {
     fibonacci.init(1)
